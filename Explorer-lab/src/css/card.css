@@ -7,7 +7,21 @@
     background-image: url("public/cc-bg.svg");
     display: flex;
     flex-direction: column;
-}
-.cc-logo{
+    justify-content: space-between;
     
 }
+.card-text{
+   padding: 20px;
+   position: relative;
+}
+.cc-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cc-bg {
+    position: absolute;
+   
+    z-index: 0;
+    
+  }
