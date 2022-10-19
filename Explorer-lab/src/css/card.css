@@ -1,0 +1,13 @@
+.cc{
+    border-radius: 15.19px;
+    background: no-repeat center/cover;
+    max-width: 360px;
+    width: 100%;
+    height: 230px;
+    background-image: url("public/cc-bg.svg");
+    display: flex;
+    flex-direction: column;
+}
+.cc-logo{
+    
+}
