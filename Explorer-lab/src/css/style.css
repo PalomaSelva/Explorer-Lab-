@@ -1,0 +1,99 @@
+@import 'responsive.css';
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #ffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #121214;
+  width: 100vw;
+  height: 100vh;
+}
+
+#app{
+  width: 58% ;
+  background-color: #202024;
+  padding: 28px 48px;
+  border: 1px solid #323238;
+  border-radius: 6px;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+header{
+  display: flex;
+  align-items: center;
+}
+header h2{
+  margin-right: 8px;
+  margin: 16px 0;
+}
+header span{
+  font-weight: 400;
+  color: #959595;
+}
+.input-wrapped{
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: #E1E1E6;
+  margin:16px 0px ;
+}
+.input-wrapped input{
+  border-radius: 6px;
+  background-color: #121214;
+  outline: none;
+  border: 1px solid #202024;
+  height: 41px;
+  width: 100%;
+  color: white;
+}
+.input-wrapped input:focus{
+  background-color: #1c1c1f;
+  border-color: #42D3FF;
+}
+.last-inputs{
+  display: flex;
+  justify-content: space-between;
+}
+.last-inputs .input-wrapped{
+  width: 40%;
+  margin: 0;
+}
+
+.txt-content{
+  max-width: 55%;
+}
+
+button{
+  padding: 16px 0;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #42D3FF;
+  font-weight: 900;
+  border: none;
+  transition: all .5s;
+}
+button:hover{
+  background-color: #6cd9fa;
+}
+
