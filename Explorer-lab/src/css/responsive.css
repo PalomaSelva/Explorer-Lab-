@@ -2,8 +2,16 @@
     .flex{
         display: flex;
         flex-direction: column;
-        
-       
-        
       }
+    .card-text .flex{
+      flex-direction: row;
+    }
+    .txt-content{
+      width: 100%;
+    }
+}
+@media (mix-width:750px){
+    .txt-content{
+      width: 55%;
+    }
 }

@@ -28,11 +28,22 @@
 }
 .cc-input{
     font-size: 10px;
+    height: 18px;
+    
 }
 .cc-value{
     font-size: 14px;
+    font-weight: bold;
+}
+.cc-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 124px;
+    height: 100%;
+    
 }
 .cc-bg {
     position: absolute;
     z-index: 0;
-  }
+}

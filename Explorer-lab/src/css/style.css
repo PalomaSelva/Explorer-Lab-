@@ -1,5 +1,6 @@
 @import 'responsive.css';
 @import 'card.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -81,7 +82,7 @@ header span{
 }
 
 .txt-content{
-  max-width: 55%;
+  max-width: 100%;
 }
 
 button{
