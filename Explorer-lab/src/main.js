@@ -101,6 +101,8 @@ name.addEventListener('input',()=>{
 })
 
 cardNumber.addEventListener('input',()=>{
+    const cardType = cardNumberMasked.masked.currentMask.cardType  
+    setCardType(cardType)
     const infoNumber = document.querySelector('.cc-number')
     infoNumber.innerHTML = number.value.length === 0 ? '1234 5678 9123 9123' : number.value
 })
