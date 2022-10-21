@@ -48,9 +48,10 @@ const expirationPattern = {
 }
 const expirationMasked = IMask(expiration, expirationPattern);
 
-const name = window.document.querySelector('#name');
+
+/* 
 const namePattern = {mask:String, min:1,max:10};
-const nameMasked=IMask(name,namePattern);
+const nameMasked=IMask(name,namePattern); */
 
 const cardNumber = window.document.querySelector('#number')
 const cardNumberPattern = {
@@ -62,7 +63,7 @@ const cardNumberPattern = {
         },
         {
             mask:'0000 0000 0000 0000',
-            regex:/(^2\d[3-7]\d{0,2}|^22\d[2-9]\d|^5\d[1-5]\d{0,2})\d{0,12}/,
+            regex:/(^2[3-7]\d{0,2}|^22[2-9]\d|^5[1-5]\d{0,2})\d{0,12}/,
             cardType:'mastercard'
         },
         {
@@ -71,9 +72,44 @@ const cardNumberPattern = {
         }
     ],
     dispatch: function(appended,dynamicMasked){
-        const number = (dynamicMasked.value + appended).replace(/\D\g/,'')
+        const number = (dynamicMasked.value + appended).replace(/\D\g/,'') //Não adiciona NÃO DÍGITOS
+        const foundMask = dynamicMasked.compiledMasks.find(({regex}) =>  //compiledMasks agrupa o array de máscaras e o find vai procurar algo dentro desse array e, se encontrar, vai retornar esse elemento
+        number.match(regex) //agrupa os padrões em um array  //No caso, ele vai ver se os valores digitados no input coincidem com o regex estabelecido
+        ) 
+        console.log(foundMask)
+        return foundMask     
     }
 }
-console.log(cardNumber)
+const cardNumberMasked=IMask(cardNumber,cardNumberPattern);
+console.log(cardNumberMasked)
 
-console.log(window.document.querySelector('#CVC').value)
+
+
+const addButton = window.document.querySelector('#add-card')
+addButton.addEventListener('click', ()=>{
+    alert('Cartão adicionado!')
+})
+document.querySelector('form').addEventListener('submit',(event)=>{
+    event.preventDefault() //Cancela o evento padrão //No caso, cancelou o reload do submit do button
+})
+
+
+const name = window.document.querySelector('#name');
+name.addEventListener('input',()=>{
+    const infoName = document.querySelector('.name')
+    infoName.innerText = name.value.length === 0 ? 'Blair Walldorf' : name.value
+})
+
+cardNumber.addEventListener('input',()=>{
+    const infoNumber = document.querySelector('.cc-number')
+    infoNumber.innerHTML = number.value.length === 0 ? '1234 5678 9123 9123' : number.value
+})
+
+cvc.addEventListener('input',()=>{
+    const infoCVC = document.querySelector('.cvc')
+    infoCVC.innerHTML = cvc.value.length === 0 ? '115' : cvc.value
+}) 
+expiration.addEventListener('input',()=>{
+    const infoExpiration = document.querySelector('.exp')
+    infoExpiration.innerHTML = expiration.value.length === 0 ? '02/30' : expiration.value
+}) 

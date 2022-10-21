@@ -67,6 +67,10 @@ header span{
   height: 41px;
   width: 100%;
   color: white;
+  text-transform: uppercase;
+}
+.cc-value{
+  text-transform: uppercase;
 }
 .input-wrapped input:focus{
   background-color: #1c1c1f;
